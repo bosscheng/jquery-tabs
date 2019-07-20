@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        ul{
+            list-style: none;
+        }
+
+        .tabs{float:left;width:100%;background:#b70002;}
+        .tabs li{float:left;margin:2px 2px 0;padding:6px 20px;border-radius:3px 3px 0 0;color:#fff;text-decoration:none;}
+        .tabs li.selected{background:#fff;color:#C30;}
+        .tabs li a{color:#fff;text-decoration:none;}
+        .tabs li.selected a{color:#C30;}
+        .tab-contx{width:100%;}
+        .tab-contx p{padding:5px;}
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2>click 效果显示</h2>
+<div class="demo-wrap">
+    <ul class="tabs" id="tabWrap1">
+        <li rel="#tab1">tag1</li>
+        <li rel="#tab2">tag2</li>
+        <li rel="#tab3">tag3</li>
+        <li rel="#tab4">tag4</li>
+    </ul>
+    <div id="newDom">
+        <div id="tab1" class="tab-contx"><p>content1</p></div>
+        <div id="tab2" class="tab-contx hide"><p>content2</p></div>
+        <div id="tab3" class="tab-contx hide"><p>content3</p></div>
+        <div id="tab4" class="tab-contx hide"><p>content4</p></div>
+    </div>
+</div>
+<h2>hover 效果演示</h2>
+<div class="demo-wrap">
+    <ul class="tabs" id="tabWrap2">
+        <li rel="#tab5">tag5</li>
+        <li rel="#tab6">tag6</li>
+        <li rel="#tab7">tag7</li>
+        <li rel="#tab8">tag8</li>
+    </ul>
+    <div >
+        <div id="tab5" class="tab-contx"><p>content5</p></div>
+        <div id="tab6" class="tab-contx hide"><p>content6</p></div>
+        <div id="tab7" class="tab-contx hide"><p>content7</p></div>
+        <div id="tab8" class="tab-contx hide"><p>content8</p></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://res.suning.cn/??public/v3/js/jquery.js"></script>
+<script src="../tabs.js"></script>
+<script>
+
+    $('#tabWrap1').tab();
+
+
+
+    $('#tabWrap2').tab({
+        event : "mouseover",
+        delay : 100,        //演示数据，一般无需设置或设置为100-200
+        callback : function(id) {
+
+        }
+    })
+
+</script>
+</body>
+</html>
